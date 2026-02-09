@@ -1,0 +1,36 @@
+appId: com.tag.editor
+productName: Tag
+directories:
+  buildResources: resources
+  output: dist
+files:
+  - out/**/*
+  - "!**/*.map"
+fileAssociations:
+  - ext: mp3
+    name: MP3 Audio
+    description: MP3 Audio File
+    role: Editor
+  - ext: wav
+    name: WAV Audio
+    description: WAV Audio File
+    role: Editor
+  - ext: m4a
+    name: M4A Audio
+    description: M4A Audio File
+    role: Editor
+win:
+  target:
+    - nsis
+    - portable
+  icon: resources/icon.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  perMachine: true
+mac:
+  target:
+    - target: dmg
+      arch: arm64
+linux:
+  target: AppImage

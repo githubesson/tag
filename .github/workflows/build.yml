@@ -36,15 +36,15 @@ jobs:
 
       - name: Build (Windows)
         if: matrix.platform == 'win'
-        run: bunx electron-builder --win --config electron-builder.yml
+        run: bunx electron-builder --win --publish never --config electron-builder.yml
 
       - name: Build (macOS ARM)
         if: matrix.platform == 'mac'
-        run: bunx electron-builder --mac --config electron-builder.yml
+        run: bunx electron-builder --mac --publish never --config electron-builder.yml
 
       - name: Build (Linux)
         if: matrix.platform == 'linux'
-        run: bunx electron-builder --linux --config electron-builder.yml
+        run: bunx electron-builder --linux --publish never --config electron-builder.yml
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
